@@ -24,7 +24,8 @@
 
         public Event GetById(string id)
         {
-            var intId = this.identifierProvider.DecodeId(id);
+            int intId = 1;
+            int.TryParse(id, out intId);
             var eventById = this.events.GetById(intId);
 
             return eventById;

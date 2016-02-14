@@ -1,0 +1,31 @@
+﻿@model GetABuddy.Web.ViewModels.SingleEvent.SingleEventViewModel
+@{
+    ViewBag.Title = "Event";
+}
+<hr />
+<a href="#" class="pull-right btn btn-success btn-lg">Join now!</a>
+<div class="panel">
+	<div class="panel-heading">
+		<h1>@Model.Name by <span class="text-primary">@Model.Creator</span></h1>
+		<div class="lead">in <a href="/Category/@Model.Id">@Model.Category</a></div>
+	</div>
+	<div class="panel-body">
+		<h3><span class="label label-danger">What?</span></h3>
+		<p class="lead">@Model.Description</p>
+		<div class="row">
+			<div class="col-md-4">
+				<h3><span class="label label-danger">Where?</span></h3>
+				<p class="lead">@Model.City</p>
+			</div>
+			<div class="col-md-4">
+				<h3><span class="label label-danger">When?</span></h3>
+				<p class="lead">@Model.Time</p>
+			</div>
+			<div class="col-md-4">
+				<h3><span class="label label-danger">Participants?</span></h3>
+				<p class="lead">@Model.NumberOfParticipants</p>
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -5,7 +5,6 @@
     using AutoMapper;
     using Data.Models;
     using Infrastructure.Mapping;
-    using Services.Web;
 
     public class EventViewModel : IMapFrom<Event>, IHaveCustomMappings
     {
@@ -25,8 +24,7 @@
         {
             get
             {
-                IIdentifierProvider identifier = new IdentifierProvider();
-                return @"/Event/{identifier.EncodeId(this.Id)}";
+                return @"/Event/" + this.Id;
             }
         }
 

@@ -42,13 +42,13 @@
         public string CreatorId { get; set; }
 
         [ForeignKey("CreatorId")]
-        public ApplicationUser Creator { get; set; }
+        public virtual ApplicationUser Creator { get; set; }
 
         [Required]
         public int CategoryId { get; set; }
 
         [ForeignKey("CategoryId")]
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
 
         [Required]
         public int NumberOfParticipants { get; set; }
