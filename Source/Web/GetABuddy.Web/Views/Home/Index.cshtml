@@ -20,28 +20,34 @@
 <div class="row">
 	@foreach (var ev in Model.Events)
 	{
-		<div class="col-md-4">
+		<div class="well well-lg col-md-4">
 			<a href="@ev.Url">
 				<h3>@ev.Name</h3>
 			</a>
 			<h4>Where: @ev.City</h4>
 			<h4>When: @ev.Time</h4>
-			<div>Created by @ev.Creator in @ev.Category</div>
-			<div></div>
+			<div>Created by @ev.Creator in <span class="label label-danger">@ev.Category</span></div>
+			<br />
+			<p><a class="btn btn-success" href="@ev.Url" role="button">Learn More</a></p>
 		</div>
 	}
 </div>
 <hr />
-<h1>Categories</h1>
-<div class="row">
-	@foreach (var category in Model.Categories)
-	{
-		<div class="col-md-2">
-			<a href="@category.Id">
-				<h4>@category.Name</h4>
-			</a>
-		</div>
-	}
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">Categories</h3>
+	</div>
+	<div class="panel-body row">
+		@foreach (var category in Model.Categories)
+		{
+			<div class="col-md-2">
+				<a href="@category.Id">
+					<h4>@category.Name</h4>
+				</a>
+			</div>
+		}
+	</div>
 </div>
 
 

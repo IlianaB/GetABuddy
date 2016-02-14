@@ -21,8 +21,6 @@
 
         public string City { get; set; }
 
-        public int NumberOfParticipants { get; set; }
-
         public string Url
         {
             get
