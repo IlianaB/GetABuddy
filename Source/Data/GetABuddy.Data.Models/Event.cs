@@ -1,12 +1,11 @@
-﻿namespace MvcTemplate.Data.Models
+﻿namespace GetABuddy.Data.Models
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    using GetABuddy.Data.Common.Models;
-    using GetABuddy.Data.Models;
+    using Common.Models;
 
     public class Event : BaseModel<int>
     {
@@ -44,6 +43,12 @@
 
         [ForeignKey("CreatorId")]
         public ApplicationUser Creator { get; set; }
+
+        [Required]
+        public int CategoryId { get; set; }
+
+        [ForeignKey("CategoryId")]
+        public Category Category { get; set; }
 
         [Required]
         public int NumberOfParticipants { get; set; }

@@ -1,8 +1,8 @@
-﻿namespace MvcTemplate.Data.Models
+﻿namespace GetABuddy.Data.Models
 {
     using System.Collections.Generic;
 
-    using GetABuddy.Data.Common.Models;
+    using Common.Models;
 
     public class Category : BaseModel<int>
     {

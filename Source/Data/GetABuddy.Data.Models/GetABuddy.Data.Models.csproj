@@ -64,8 +64,6 @@
     <Compile Include="City.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="Event.cs" />
-    <Compile Include="Joke.cs" />
-    <Compile Include="JokeCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

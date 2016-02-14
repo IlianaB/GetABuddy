@@ -1,10 +1,9 @@
-﻿namespace MvcTemplate.Data.Models
+﻿namespace GetABuddy.Data.Models
 {
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    using GetABuddy.Data.Common.Models;
-    using GetABuddy.Data.Models;
+    using Common.Models;
 
     public class Comment : BaseModel<int>
     {

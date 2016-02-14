@@ -5,10 +5,8 @@
     using System.Linq;
 
     using Common.Models;
-
     using Microsoft.AspNet.Identity.EntityFramework;
-
-    using GetABuddy.Data.Models;
+    using Models;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -17,9 +15,13 @@
         {
         }
 
-        public IDbSet<Joke> Jokes { get; set; }
+        public IDbSet<Event> Events { get; set; }
 
-        public IDbSet<JokeCategory> JokesCategories { get; set; }
+        public IDbSet<Category> Categories { get; set; }
+
+        public IDbSet<Comment> Comments { get; set; }
+
+        public IDbSet<City> Cities { get; set; }
 
         public static ApplicationDbContext Create()
         {

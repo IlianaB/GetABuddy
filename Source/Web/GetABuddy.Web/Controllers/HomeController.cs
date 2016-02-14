@@ -4,35 +4,34 @@
     using System.Web.Mvc;
 
     using Infrastructure.Mapping;
-
     using Services.Data;
-
     using ViewModels.Home;
 
     public class HomeController : BaseController
     {
-        private readonly IJokesService jokes;
-        private readonly ICategoriesService jokeCategories;
+        private readonly IEventsService events;
+        private readonly ICategoriesService categories;
 
         public HomeController(
-            IJokesService jokes,
-            ICategoriesService jokeCategories)
+            IEventsService events,
+            ICategoriesService categories)
         {
-            this.jokes = jokes;
-            this.jokeCategories = jokeCategories;
+            this.events = events;
+            this.categories = categories;
         }
 
         public ActionResult Index()
         {
-            var jokes = this.jokes.GetRandomJokes(3).To<JokeViewModel>().ToList();
+            var events = this.events.GetNewest(3).To<EventViewModel>().ToList();
             var categories =
                 this.Cache.Get(
                     "categories",
-                    () => this.jokeCategories.GetAll().To<JokeCategoryViewModel>().ToList(),
+                    () => this.categories.GetAll().To<CategoryViewModel>().ToList(),
                     30 * 60);
+
             var viewModel = new IndexViewModel
             {
-                Jokes = jokes,
+                Events = events,
                 Categories = categories
             };
 
