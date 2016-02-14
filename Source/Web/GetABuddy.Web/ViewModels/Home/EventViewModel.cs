@@ -28,7 +28,7 @@
             get
             {
                 IIdentifierProvider identifier = new IdentifierProvider();
-                return @"/Joke/{identifier.EncodeId(this.Id)}";
+                return @"/Event/{identifier.EncodeId(this.Id)}";
             }
         }
 

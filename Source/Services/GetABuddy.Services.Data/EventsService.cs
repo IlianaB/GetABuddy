@@ -5,7 +5,7 @@
     using GetABuddy.Data.Common;
     using GetABuddy.Data.Models;
     using Web;
-    
+
     public class EventsService : IEventsService
     {
         private readonly IDbRepository<Event> events;

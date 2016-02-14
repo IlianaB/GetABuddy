@@ -2,26 +2,46 @@
 @{
 	ViewBag.Title = "Home Page";
 }
-<h1>Events</h1>
+<div class="container">
+	<div class="jumbotron">
+		<h1>Get a Buddy</h1>
+		<p>
+			You need someone to walk the dog with? Or someone to have a drink after work? Or maybe you need a tennis partner?
+			Here you can a nice company for all your activities!
+		</p>
+
+		<p>Have fun and rediscover the artist within you!</p>
+
+		<p><a class="btn btn-primary btn-lg" href="#" role="button" id="learnButton">Join now!</a></p>
+
+	</div>
+</div>
+<h1>Last events</h1>
 <div class="row">
 	@foreach (var ev in Model.Events)
 	{
 		<div class="col-md-4">
 			<a href="@ev.Url">
-				<h1>@ev.Name</h1>
+				<h3>@ev.Name</h3>
 			</a>
-			<div>@ev.Category</div>
+			<h4>Where: @ev.City</h4>
+			<h4>When: @ev.Time</h4>
+			<div>Created by @ev.Creator in @ev.Category</div>
+			<div></div>
 		</div>
-		}
+	}
 </div>
+<hr />
 <h1>Categories</h1>
 <div class="row">
 	@foreach (var category in Model.Categories)
 	{
 		<div class="col-md-2">
-			@category.Name
+			<a href="@category.Id">
+				<h4>@category.Name</h4>
+			</a>
 		</div>
-		}
+	}
 </div>
 
 
