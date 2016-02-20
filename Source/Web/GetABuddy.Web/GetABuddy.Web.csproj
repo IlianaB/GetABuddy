@@ -300,8 +300,9 @@
     <Content Include="Scripts\jquery-2.2.0.min.map" />
     <Content Include="Views\Home\index.cshtml" />
     <Content Include="Views\Event\ById.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\WordTag.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\LeadWord.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Tag.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
