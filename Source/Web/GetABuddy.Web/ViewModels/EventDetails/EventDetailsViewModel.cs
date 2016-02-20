@@ -1,4 +1,4 @@
-﻿namespace GetABuddy.Web.ViewModels.SingleEvent
+﻿namespace GetABuddy.Web.ViewModels.EventDetails
 {
     using System;
     using System.Collections.Generic;
@@ -7,7 +7,7 @@
     using Data.Models;
     using Infrastructure.Mapping;
 
-    public class SingleEventViewModel : IMapFrom<Event>, IHaveCustomMappings
+    public class EventDetailsViewModel : IMapFrom<Event>, IHaveCustomMappings
     {
         public int Id { get; set; }
 
@@ -33,13 +33,13 @@
 
         public void CreateMappings(IMapperConfiguration configuration)
         {
-            configuration.CreateMap<Event, SingleEventViewModel>()
+            configuration.CreateMap<Event, EventDetailsViewModel>()
                 .ForMember(x => x.Creator, opt => opt.MapFrom(x => x.Creator.UserName));
 
-            configuration.CreateMap<Event, SingleEventViewModel>()
+            configuration.CreateMap<Event, EventDetailsViewModel>()
                 .ForMember(x => x.Category, opt => opt.MapFrom(x => x.Category.Name));
 
-            configuration.CreateMap<Event, SingleEventViewModel>()
+            configuration.CreateMap<Event, EventDetailsViewModel>()
                 .ForMember(x => x.City, opt => opt.MapFrom(x => x.City.Name));
         }
     }
