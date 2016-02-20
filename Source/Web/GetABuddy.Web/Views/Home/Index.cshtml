@@ -25,8 +25,8 @@
 				<h3>@ev.Name</h3>
 			</a>
 			<h4>Where: @ev.City</h4>
-			<h4>When: @ev.Time</h4>
-			<div>Created by @ev.Creator in <span class="label label-danger">@ev.Category</span></div>
+			<h4>When: @Html.DisplayFor(m => ev.Time, "Date")</h4>
+			<div>Created by @ev.Creator in @Html.DisplayFor(m => @ev.Category, "Tag")</div>
 			<br />
 			<p><a class="btn btn-success" href="@ev.Url" role="button">Learn More</a></p>
 		</div>

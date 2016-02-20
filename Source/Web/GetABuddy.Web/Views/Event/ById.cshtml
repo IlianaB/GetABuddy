@@ -11,15 +11,15 @@
 	</div>
 	<div class="panel-body">
 		<h3><span class="label label-danger">What?</span></h3>
-		<p class="lead">@Model.Description</p>
+		@Html.DisplayFor(m => m.Description, "LeadWord")
 		<div class="row">
 			<div class="col-md-4">
 				<h3><span class="label label-danger">Where?</span></h3>
-				<p class="lead">@Model.City</p>
+				@Html.DisplayFor(m => m.City, "LeadWord")
 			</div>
 			<div class="col-md-4">
 				<h3><span class="label label-danger">When?</span></h3>
-				<p class="lead">@Model.Time</p>
+				<p class="lead">@Html.DisplayFor(m => m.Time, "Date")</p>
 			</div>
 			<div class="col-md-4">
 				<h3><span class="label label-danger">Participants?</span></h3>
