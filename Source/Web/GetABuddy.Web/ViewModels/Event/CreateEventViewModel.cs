@@ -8,8 +8,8 @@
     {
         public InputEventViewModel Event { get; set; }
 
-        public IEnumerable<City> Cities { get; set; }
+        public IEnumerable<CityViewModel> Cities { get; set; }
 
-        public IEnumerable<Category> Categories { get; set; }
+        public IEnumerable<CategoryViewModel> Categories { get; set; }
     }
 }
