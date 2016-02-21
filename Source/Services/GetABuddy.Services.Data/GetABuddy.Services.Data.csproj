@@ -45,9 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriesService.cs" />
+    <Compile Include="CitiesService.cs" />
     <Compile Include="CommentsService.cs" />
     <Compile Include="EventsService.cs" />
     <Compile Include="ICategoriesService.cs" />
+    <Compile Include="ICitiesService.cs" />
     <Compile Include="ICommentsService.cs" />
     <Compile Include="IEventsService.cs" />
     <Compile Include="IUserServices.cs" />

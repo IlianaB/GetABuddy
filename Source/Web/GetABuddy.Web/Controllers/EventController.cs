@@ -5,21 +5,29 @@
     using Data.Models;
     using Microsoft.AspNet.Identity;
     using Services.Data;
-    using ViewModels.EventDetails;
     using ViewModels.Event;
+    using ViewModels.EventDetails;
+
     public class EventController : BaseController
     {
         private readonly IEventsService events;
         private readonly ICommentsService comments;
         private readonly IUserServices users;
         private readonly ICategoriesService categories;
+        private readonly ICitiesService cities;
 
-        public EventController(IEventsService events, ICommentsService comments, IUserServices users, ICategoriesService categories)
+        public EventController(
+            IEventsService events,
+            ICommentsService comments,
+            IUserServices users,
+            ICategoriesService categories,
+            ICitiesService cities)
         {
             this.events = events;
             this.comments = comments;
             this.users = users;
             this.categories = categories;
+            this.cities = cities;
         }
 
         public ActionResult ById(string id)
@@ -64,9 +72,11 @@
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult Create(string id)
         {
             var categories = this.categories.GetAll();
+            var cities = this.cities.GetAll();
 
             var model = new CreateEventViewModel()
             {
