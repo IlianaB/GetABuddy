@@ -74,18 +74,15 @@
                 CreatorId = authorId
             };
 
-            var ci = cityId == 0 ? 3 : cityId;
+            var ci = cityId == 0 ? 2 : cityId;
             var city = this.cities.GetById(ci);
             city.Events.Add(newEvent);
-            this.cities.Save();
 
             var category = this.categories.GetById(categoryId);
             category.Events.Add(newEvent);
-            this.categories.Save();
 
             var user = this.users.GetById(authorId);
             user.Events.Add(newEvent);
-            this.users.Save();
 
             this.events.Add(newEvent);
             this.events.Save();
