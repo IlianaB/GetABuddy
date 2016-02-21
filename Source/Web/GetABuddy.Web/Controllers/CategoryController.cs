@@ -1,8 +1,10 @@
 ﻿namespace GetABuddy.Web.Controllers
 {
+    using System.Collections.Generic;
     using System.Web.Mvc;
 
     using Services.Data;
+    using ViewModels.Category;
 
     public class CategoryController : BaseController
     {
@@ -16,15 +18,7 @@
         public ActionResult All()
         {
             var categories = this.categories.GetAll();
-            var viewModel = this.Mapper.Map<EventDetailsViewModel>(categories);
-
-            return this.View(viewModel);
-        }
-
-        public ActionResult ById(string id)
-        {
-            var eventById = this.events.GetById(id);
-            var viewModel = this.Mapper.Map<EventDetailsViewModel>(eventById);
+            var viewModel = this.Mapper.Map<IEnumerable<CategoryViewModel>>(categories);
 
             return this.View(viewModel);
         }
