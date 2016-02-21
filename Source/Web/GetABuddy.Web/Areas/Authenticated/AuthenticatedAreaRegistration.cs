@@ -1,14 +1,14 @@
-﻿using System.Web.Mvc;
-
-namespace MvcTemplate.Web.Areas.Authenticated
+﻿namespace MvcTemplate.Web.Areas.Authenticated
 {
+    using System.Web.Mvc;
+
     public class AuthenticatedAreaRegistration : AreaRegistration 
     {
         public override string AreaName 
         {
             get 
             {
-                return "Authenticated";
+                return "Users";
             }
         }
 
@@ -16,7 +16,7 @@ namespace MvcTemplate.Web.Areas.Authenticated
         {
             context.MapRoute(
                 "Authenticated_default",
-                "Authenticated/{controller}/{action}/{id}",
+                "Users/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }

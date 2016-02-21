@@ -14,6 +14,8 @@
 
         public string Author { get; set; }
 
+        public string AuthorId { get; set; }
+
         public string Event { get; set; }
 
         public void CreateMappings(IMapperConfiguration configuration)
