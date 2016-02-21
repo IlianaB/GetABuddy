@@ -218,6 +218,7 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\EventDetails\CommentViewModel.cs" />
     <Compile Include="ViewModels\EventDetails\EventDetailsViewModel.cs" />
     <Compile Include="ViewModels\Home\CategoryViewModel.cs" />
     <Compile Include="ViewModels\Home\EventViewModel.cs" />
