@@ -4,7 +4,7 @@
 }
 
 <div class="row">
-	<a href="/Event/ById/@Model.Id">@Model.Name</a> held on @Model.Time in @Model.City  |  @Html.DisplayFor(m => m.Category, "Tag"))
+	<a href="/Event/ById/@Model.Id">@Model.Name</a> held on @Model.Time in @Model.City  |  <a href="/Category/ById/@Model.CategoryId">@Html.DisplayFor(m => m.Category, "Tag")</a>)
 </div>
 
 

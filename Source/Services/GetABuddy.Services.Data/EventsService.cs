@@ -74,7 +74,7 @@
                 CreatorId = authorId
             };
 
-            var ci = cityId == 0 ? 4 : cityId;
+            var ci = cityId == 0 ? 2 : cityId;
             var city = this.cities.GetById(ci);
             city.Events.Add(newEvent);
 
