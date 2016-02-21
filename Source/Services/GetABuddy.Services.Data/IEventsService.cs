@@ -13,5 +13,7 @@
         Event GetById(string id);
 
         void AddComment(Event eventToModify, Comment comment);
+
+        void AddParticipant(string id, ApplicationUser user);
     }
 }

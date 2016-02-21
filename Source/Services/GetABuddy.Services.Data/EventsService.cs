@@ -41,5 +41,12 @@
             eventToModify.Comments.Add(comment);
             this.events.Save();
         }
+
+        public void AddParticipant(string id, ApplicationUser user)
+        {
+            var eventById = this.GetById(id);
+            eventById.Participants.Add(user);
+            this.events.Save();
+        }
     }
 }
