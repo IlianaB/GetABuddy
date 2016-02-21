@@ -7,7 +7,7 @@
 
     using Common.Models;
 
-    public class Event : BaseModel<int>
+    public class Event : BaseModel<int>, ITKeyEntity<int>
     {
         private ICollection<Comment> comments;
 

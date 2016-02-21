@@ -9,7 +9,15 @@
 	</div>
 	<div class="col-md-11">
 		<p>@Model.Content</p>
-		<small>published by @Model.Author on @Html.DisplayFor(m => @Model.CreatedOn, "Date")</small>
+
+		@if (User.Identity.IsAuthenticated)
+		{
+			<small>published by <a href="/Users/Profile/ByUserName?name=@Model.Author">@Model.Author</a> on @Html.DisplayFor(m => @Model.CreatedOn, "Date")</small>
+		}
+		else
+		{
+			<small>published by @Model.Author on @Html.DisplayFor(m => @Model.CreatedOn, "Date")</small>
+		}		
 	</div>
 </div>
 <br />

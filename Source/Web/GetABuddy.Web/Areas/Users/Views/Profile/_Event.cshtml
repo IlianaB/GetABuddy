@@ -1,0 +1,10 @@
+﻿@model GetABuddy.Web.Areas.Users.ViewModels.EventViewModel
+@{
+	ViewBag.Title = "_EventViewModel";
+}
+
+<div class="row">
+	<a href="/Event/ById/@Model.Id">@Model.Name</a> held on @Model.Time in @Model.City  |  @Html.DisplayFor(m => m.Category, "Tag"))
+</div>
+
+

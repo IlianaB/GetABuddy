@@ -7,8 +7,9 @@
     using GetABuddy.Data.Common.Models;
 
     // TODO: Why BaseModel<int> instead BaseModel<TKey>?
-    public class DbRepository<T> : IDbRepository<T>
-        where T : BaseModel<int>
+    public class DbRepository<T, T2> : IDbRepository<T, T2>
+        where T2 : IEquatable<T2>
+        where T : class, IAuditInfo, IDeletableEntity, ITKeyEntity<T2>
     {
         public DbRepository(DbContext context)
         {
@@ -35,9 +36,9 @@
             return this.DbSet;
         }
 
-        public T GetById(int id)
+        public T GetById(T2 id)
         {
-            return this.All().FirstOrDefault(x => x.Id == id);
+            return this.All().FirstOrDefault(x => x.Id.Equals(id));
         }
 
         public void Add(T entity)

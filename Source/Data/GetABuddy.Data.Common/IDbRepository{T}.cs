@@ -4,13 +4,8 @@
 
     using GetABuddy.Data.Common.Models;
 
-    public interface IDbRepository<T> : IDbRepository<T, int>
-        where T : BaseModel<int>
-    {
-    }
-
     public interface IDbRepository<T, in TKey>
-        where T : BaseModel<TKey>
+        where T : IAuditInfo, IDeletableEntity, ITKeyEntity<TKey>
     {
         IQueryable<T> All();
 

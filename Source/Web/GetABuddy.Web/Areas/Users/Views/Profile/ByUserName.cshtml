@@ -1,0 +1,31 @@
+﻿@model GetABuddy.Web.Areas.Users.ViewModels.UserInfoViewModel
+@{
+	ViewBag.Title = "ById";
+}
+
+<br />
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<div class="panel-title">User Information</div>
+	</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-2">
+				<span class="glyphicon glyphicon-user pull-right" aria-hidden="true"></span>
+			</div>
+			<div class="col-md-10">Name: @Model.DisplayName</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-10">Years: @Model.Years</div>
+		</div>
+		<div class="row">
+			<h3>Published Events: </h3>
+		</div>
+
+		@foreach (var ev in Model.Events)
+		{
+			@Html.Partial("_Event", ev)
+		}
+	</div>
+</div>
