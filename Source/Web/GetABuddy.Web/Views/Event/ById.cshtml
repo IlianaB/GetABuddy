@@ -1,9 +1,11 @@
-﻿@using GetABuddy.Web.ViewModels.EventDetails
-
-@model GetABuddy.Web.ViewModels.EventDetails.EventDetailsViewModel
+﻿@model GetABuddy.Web.ViewModels.EventDetails.EventDetailsViewModel
 @{
-    ViewBag.Title = "Event";
+	ViewBag.Title = "Event";
 }
+
+<script src="~/Scripts/jquery-2.2.0.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
 <hr />
 <a href="#" class="pull-right btn btn-success btn-lg">Join now!</a>
 <div class="panel">
@@ -29,17 +31,33 @@
 			</div>
 		</div>
 
+		<br />
+		<h3>Say something</h3>
+
+		@using (Ajax.BeginForm("AddComment",
+				new AjaxOptions
+				{
+					HttpMethod = "POST",
+					UpdateTargetId = "comments-container",
+					InsertionMode = InsertionMode.Replace
+				}))
+		{
+			<div class="row">
+				@Html.HiddenFor(m => m.Id);
+				<div class="col-md-6">
+					<textarea name="content"></textarea>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<input type="submit" class="btn btn-primary" value="Comment" />
+				</div>
+			</div>
+		}
+
+		@Html.Partial("_Comments", @Model)
+
 		<hr />
-		<div class="comments-container">
-			<h3>
-				Comments
-			</h3>
-			<br />
-			@foreach (var comment in @Model.Comments)
-			{
-				@Html.Partial("_Comment", comment);
-			}
-		</div>
+
 	</div>
 </div>
-

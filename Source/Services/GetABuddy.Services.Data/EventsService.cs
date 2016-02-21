@@ -35,5 +35,11 @@
         {
             return this.events.All().OrderByDescending(x => x.CreatedOn).Take(count);
         }
+
+        public void AddComment(Event eventToModify, Comment comment)
+        {
+            eventToModify.Comments.Add(comment);
+            this.events.Save();
+        }
     }
 }
