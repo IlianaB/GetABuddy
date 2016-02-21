@@ -27,7 +27,7 @@
 
         public int NumberOfParticipants { get; set; }
 
-        public ICollection<Comment> Comments { get; set; }
+        public ICollection<CommentViewModel> Comments { get; set; }
 
         public ICollection<ApplicationUser> Participants { get; set; }
 

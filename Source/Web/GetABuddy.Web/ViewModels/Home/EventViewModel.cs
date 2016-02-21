@@ -24,7 +24,7 @@
         {
             get
             {
-                return @"/Event/" + this.Id;
+                return @"/Event/ById/" + this.Id;
             }
         }
 

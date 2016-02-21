@@ -11,5 +11,7 @@
         IQueryable<Event> GetNewest(int count);
 
         Event GetById(string id);
+
+        void AddComment(Event eventToModify, Comment comment);
     }
 }
