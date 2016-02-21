@@ -32,5 +32,14 @@
         {
             return this.categories.All().OrderBy(x => x.Name);
         }
+
+        public Category GetById(string id)
+        {
+            int intId = 1;
+            int.TryParse(id, out intId);
+            var category = this.categories.GetById(intId);
+
+            return category;
+        }
     }
 }

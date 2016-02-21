@@ -1,0 +1,9 @@
+﻿@model GetABuddy.Web.ViewModels.Category.EventDetailsViewModel
+@{
+    ViewBag.Title = "_EventDetails";
+}
+
+<a href="/Event/ById/@Model.Id" class="list-group-item">
+	@Model.Name held on @Html.DisplayFor(m => m.Time, "Date") in @Model.City with @Model.NumberOfParticipants participants | created by @Model.Creator
+</a>
+

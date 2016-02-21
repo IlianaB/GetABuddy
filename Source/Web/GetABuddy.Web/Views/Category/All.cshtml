@@ -1,0 +1,23 @@
+﻿@model ICollection<GetABuddy.Web.ViewModels.Category.CategoryViewModel>
+@{
+    ViewBag.Title = "All";
+}
+
+<br />
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<div class="panel-title">All Categories</div>
+	</div>
+	<div class="panel-body">
+		<div class="list-group">
+			@foreach (var category in Model)
+			{
+				<a href="ById/@category.Id" class="list-group-item">
+					<span class="badge">@category.Events</span>
+					@category.Name
+				</a>
+			}
+		</div>
+	</div>
+</div>
