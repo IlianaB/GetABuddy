@@ -1,5 +1,6 @@
 ﻿namespace GetABuddy.Services.Data
 {
+    using System;
     using System.Linq;
 
     using GetABuddy.Data.Common;
@@ -9,11 +10,22 @@
     public class EventsService : IEventsService
     {
         private readonly IDbRepository<Event, int> events;
+        private readonly IDbRepository<City, int> cities;
+        private readonly IDbRepository<Category, int> categories;
+        private readonly IDbRepository<ApplicationUser, string> users;
         private readonly IIdentifierProvider identifierProvider;
 
-        public EventsService(IDbRepository<Event, int> events, IIdentifierProvider identifierProvider)
+        public EventsService(
+            IDbRepository<Event, int> events,
+            IDbRepository<City, int> cities,
+            IDbRepository<Category, int> categories,
+            IDbRepository<ApplicationUser, string> users,
+            IIdentifierProvider identifierProvider)
         {
             this.events = events;
+            this.cities = cities;
+            this.categories = categories;
+            this.users = users;
             this.identifierProvider = identifierProvider;
         }
 
@@ -47,6 +59,38 @@
             var eventById = this.GetById(id);
             eventById.Participants.Add(user);
             this.events.Save();
+        }
+
+        public Event Create(string name, string description, DateTime time, int numberOfParticipants, int cityId, int categoryId, string authorId)
+        {
+            var newEvent = new Event()
+            {
+                Name = name,
+                Description = description,
+                Time = time,
+                NumberOfParticipants = numberOfParticipants,
+                CityId = cityId,
+                CategoryId = categoryId,
+                CreatorId = authorId
+            };
+
+            var ci = cityId == 0 ? 3 : cityId;
+            var city = this.cities.GetById(ci);
+            city.Events.Add(newEvent);
+            this.cities.Save();
+
+            var category = this.categories.GetById(categoryId);
+            category.Events.Add(newEvent);
+            this.categories.Save();
+
+            var user = this.users.GetById(authorId);
+            user.Events.Add(newEvent);
+            this.users.Save();
+
+            this.events.Add(newEvent);
+            this.events.Save();
+
+            return newEvent;
         }
     }
 }

@@ -1,0 +1,36 @@
+﻿@model GetABuddy.Web.ViewModels.Event.CreateEventViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm("Create", "Event", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
+{
+	@Html.AntiForgeryToken()
+	<h3>Create event</h3>
+	@Html.ValidationSummary(true)
+
+	@Html.Partial("_InputEvent", Model.Event)
+
+	<div class="row form-group">
+		<div class="col-md-12">
+			@Html.LabelFor(m => m.Event.CategoryId)
+			@Html.Partial("_CategoriesDropDown", Model.Categories)
+		</div>
+	</div>
+	<br />
+
+	<div class="row form-group">
+		<div class="col-md-12">
+			@Html.LabelFor(m => m.Event.CityId)
+			@Html.Partial("_CitiesDropDown", Model.Cities)
+		</div>
+	</div>
+	<br />
+
+	<div class="row form-group">
+		<div class="col-md-10">
+			<input type="submit" class="btn btn-success pull-left" value="Publish" />
+		</div>
+	</div>
+}
+

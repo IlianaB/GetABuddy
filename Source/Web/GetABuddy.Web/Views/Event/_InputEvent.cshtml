@@ -1,0 +1,37 @@
+﻿@model GetABuddy.Web.ViewModels.Event.InputEventViewModel
+@{
+    ViewBag.Title = "_InputEvent";
+}
+
+<div class="row form-group">
+	<div class="col-md-12">
+		@Html.LabelFor(m => m.Name)
+		@Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Name of the event" })
+	</div>
+</div>
+<br />
+
+<div class="row form-group">
+	<div class="col-md-12">
+		@Html.LabelFor(m => m.Description)
+		@Html.TextAreaFor(m => m.Description, new { @class = "form-control", @placeholder = "Enter description" })
+	</div>
+</div>
+<br />
+
+<div class="row form-group">
+	<div class="col-md-12">
+		@Html.LabelFor(m => m.Time)
+		@Html.TextBoxFor(m => m.Time, new { @class = "form-control", @placeholder = "Enter description" })
+	</div>
+</div>
+<br />
+
+<div class="row form-group">
+	<div class="col-md-12">
+		@Html.LabelFor(m => m.NumberOfParticipants)
+		@Html.TextBoxFor(m => m.NumberOfParticipants, new { @class = "form-control", @placeholder = "Enter how many people do you need" })
+	</div>
+</div>
+<br />
+

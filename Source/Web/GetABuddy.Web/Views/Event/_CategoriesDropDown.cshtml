@@ -1,0 +1,11 @@
+﻿@model ICollection<GetABuddy.Web.ViewModels.Event.CategoryViewModel>
+@{
+    ViewBag.Title = "_CategoryDropDown";
+}
+
+<select class="form-control" name="CategoryId">
+	@foreach (var category in Model)
+	{
+		<option value=@category.Id>@category.Name</option>
+	}
+</select>

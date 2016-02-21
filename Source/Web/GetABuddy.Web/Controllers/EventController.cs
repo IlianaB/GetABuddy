@@ -1,10 +1,12 @@
 ﻿namespace GetABuddy.Web.Controllers
 {
     using System.Web.Mvc;
+    using System.Collections.Generic;
 
     using Data.Models;
     using Microsoft.AspNet.Identity;
     using Services.Data;
+    using ViewModels.Event;
     using ViewModels.EventDetails;
 
     public class EventController : BaseController
@@ -12,12 +14,21 @@
         private readonly IEventsService events;
         private readonly ICommentsService comments;
         private readonly IUserServices users;
+        private readonly ICategoriesService categories;
+        private readonly ICitiesService cities;
 
-        public EventController(IEventsService events, ICommentsService comments, IUserServices users)
+        public EventController(
+            IEventsService events,
+            ICommentsService comments,
+            IUserServices users,
+            ICategoriesService categories,
+            ICitiesService cities)
         {
             this.events = events;
             this.comments = comments;
             this.users = users;
+            this.categories = categories;
+            this.cities = cities;
         }
 
         public ActionResult ById(string id)
@@ -59,6 +70,44 @@
 
             this.TempData["Notification"] = "Thank you for your feedback!";
             return this.RedirectToAction("/ById/" + id);
+        }
+
+        [HttpGet]
+        [Authorize]
+        public ActionResult Create(string id)
+        {
+            var categories = this.categories.GetAll();
+            var cities = this.cities.GetAll();
+            var categoriesViewModel = this.Mapper.Map<IEnumerable<CategoryViewModel>>(categories);
+            var citiesViewModel = this.Mapper.Map<IEnumerable<CityViewModel>>(cities);
+
+            var model = new CreateEventViewModel()
+            {
+                Categories = categoriesViewModel,
+                Cities = citiesViewModel,
+                Event = new InputEventViewModel()
+            };
+
+            return this.View(model);
+        }
+
+        [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(InputEventViewModel eventToCreate)
+        {
+            var authorId = this.User.Identity.GetUserId();
+
+            var newEvent = this.events.Create(
+                eventToCreate.Name,
+                eventToCreate.Description,
+                eventToCreate.Time,
+                eventToCreate.NumberOfParticipants,
+                eventToCreate.CityId,
+                eventToCreate.CategoryId,
+                authorId);
+
+            return this.RedirectToAction("/ById/" + newEvent.Id);
         }
     }
 }
