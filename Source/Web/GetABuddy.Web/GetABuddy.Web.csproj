@@ -227,6 +227,8 @@
     <Compile Include="ViewModels\Category\EventDetailsViewModel.cs" />
     <Compile Include="ViewModels\EventDetails\CommentViewModel.cs" />
     <Compile Include="ViewModels\EventDetails\EventDetailsViewModel.cs" />
+    <Compile Include="ViewModels\Event\CategoryViewModel.cs" />
+    <Compile Include="ViewModels\Event\CityViewModel.cs" />
     <Compile Include="ViewModels\Event\CreateEventViewModel.cs" />
     <Compile Include="ViewModels\Event\InputEventViewModel.cs" />
     <Compile Include="ViewModels\Home\CategoryViewModel.cs" />

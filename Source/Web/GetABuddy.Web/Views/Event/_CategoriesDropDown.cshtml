@@ -3,9 +3,7 @@
     ViewBag.Title = "_CategoryDropDown";
 }
 
-<h2>_CategoryDropDown</h2>
-
-<select class="form-control col-md-4" name="CategoryId">
+<select class="form-control" name="CategoryId">
 	@foreach (var category in Model)
 	{
 		<option value=@category.Id>@category.Name</option>

@@ -1,6 +1,7 @@
 ﻿namespace GetABuddy.Web.Controllers
 {
     using System.Web.Mvc;
+    using System.Collections.Generic;
 
     using Data.Models;
     using Microsoft.AspNet.Identity;
@@ -77,15 +78,17 @@
         {
             var categories = this.categories.GetAll();
             var cities = this.cities.GetAll();
+            var categoriesViewModel = this.Mapper.Map<IEnumerable<CategoryViewModel>>(categories);
+            var citiesViewModel = this.Mapper.Map<IEnumerable<CityViewModel>>(cities);
 
             var model = new CreateEventViewModel()
             {
-                Categories = categories,
-                Cities = cities,
+                Categories = categoriesViewModel,
+                Cities = citiesViewModel,
                 Event = new InputEventViewModel()
             };
 
-            return this.View();
+            return this.View(model);
         }
     }
 }
