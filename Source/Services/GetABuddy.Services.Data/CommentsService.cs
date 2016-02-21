@@ -6,9 +6,9 @@
 
     public class CommentsService : ICommentsService
     {
-        private readonly IDbRepository<Comment> comments;
+        private readonly IDbRepository<Comment, int> comments;
 
-        public CommentsService(IDbRepository<Comment> comments)
+        public CommentsService(IDbRepository<Comment, int> comments)
         {
             this.comments = comments;
         }

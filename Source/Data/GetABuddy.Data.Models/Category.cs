@@ -4,7 +4,7 @@
 
     using Common.Models;
 
-    public class Category : BaseModel<int>
+    public class Category : BaseModel<int>, ITKeyEntity<int>
     {
         private ICollection<Event> events;
 

@@ -258,7 +258,6 @@
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Authenticated\Views\web.config" />
     <Content Include="Areas\Authenticated\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Authenticated\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Authenticated\Views\Profile\ById.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -322,6 +321,7 @@
     <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="Areas\Authenticated\Models\" />
+    <Folder Include="Areas\Authenticated\Views\Shared\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Shared\EditorTemplates\" />
   </ItemGroup>

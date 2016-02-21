@@ -5,7 +5,7 @@
 
     using Common.Models;
 
-    public class Comment : BaseModel<int>
+    public class Comment : BaseModel<int>, ITKeyEntity<int>
     {
         [MinLength(20, ErrorMessage = "Content cannot be  shorter than 20 characters.")]
         [MaxLength(200, ErrorMessage = "Content cannot be longer than 200 characters.")]
