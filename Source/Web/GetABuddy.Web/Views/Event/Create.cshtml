@@ -8,37 +8,8 @@
 	@Html.AntiForgeryToken()
 	<h3>Create event</h3>
 	@Html.ValidationSummary(true)
-	<div class="row form-group">
-		<div class="col-md-12">
-			@Html.LabelFor(m => m.Event.Name)
-			@Html.TextBoxFor(m => m.Event.Name, new { @class = "form-control", @placeholder = "Name of the event" })
-		</div>
-	</div>
-	<br />
 
-	<div class="row form-group">
-		<div class="col-md-12">
-			@Html.LabelFor(m => m.Event.Description)
-			@Html.TextAreaFor(m => m.Event.Description, new { @class = "form-control", @placeholder = "Enter description" })
-		</div>
-	</div>
-	<br />
-
-	<div class="row form-group">
-		<div class="col-md-12">
-			@Html.LabelFor(m => m.Event.Time)
-			@Html.TextBoxFor(m => m.Event.Time, new { @class = "form-control", @placeholder = "Enter description" })
-		</div>
-	</div>
-	<br />
-
-	<div class="row form-group">
-		<div class="col-md-12">
-			@Html.LabelFor(m => m.Event.NumberOfParticipants)
-			@Html.TextBoxFor(m => m.Event.NumberOfParticipants, new { @class = "form-control", @placeholder = "Enter how many people do you need" })
-		</div>
-	</div>
-	<br />
+	@Html.Partial("_InputEvent", Model.Event)
 
 	<div class="row form-group">
 		<div class="col-md-12">

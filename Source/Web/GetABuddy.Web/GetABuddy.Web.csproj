@@ -332,6 +332,7 @@
     <Content Include="Views\Event\Create.cshtml" />
     <Content Include="Views\Event\_CategoriesDropDown.cshtml" />
     <Content Include="Views\Event\_CitiesDropDown.cshtml" />
+    <Content Include="Views\Event\_InputEvent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

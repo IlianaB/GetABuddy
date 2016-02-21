@@ -90,5 +90,24 @@
 
             return this.View(model);
         }
+
+        [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(InputEventViewModel eventToCreate)
+        {
+            var authorId = this.User.Identity.GetUserId();
+
+            var newEvent = this.events.Create(
+                eventToCreate.Name,
+                eventToCreate.Description,
+                eventToCreate.Time,
+                eventToCreate.NumberOfParticipants,
+                eventToCreate.CityId,
+                eventToCreate.CategoryId,
+                authorId);
+
+            return this.RedirectToAction("/ById/" + newEvent.Id);
+        }
     }
 }

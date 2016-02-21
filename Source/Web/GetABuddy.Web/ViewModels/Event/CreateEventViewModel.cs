@@ -2,8 +2,6 @@
 {
     using System.Collections.Generic;
 
-    using Data.Models;
-
     public class CreateEventViewModel
     {
         public InputEventViewModel Event { get; set; }
