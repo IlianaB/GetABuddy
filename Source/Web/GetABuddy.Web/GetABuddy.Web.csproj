@@ -303,6 +303,7 @@
     <Content Include="Views\Shared\DisplayTemplates\LeadWord.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Date.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Tag.cshtml" />
+    <Content Include="Views\Event\_Comment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
