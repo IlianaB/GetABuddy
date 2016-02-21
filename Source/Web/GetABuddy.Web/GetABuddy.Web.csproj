@@ -325,6 +325,7 @@
     <Content Include="Views\Category\All.cshtml" />
     <Content Include="Views\Category\ById.cshtml" />
     <Content Include="Views\Category\_EventDetails.cshtml" />
+    <Content Include="Views\Event\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
