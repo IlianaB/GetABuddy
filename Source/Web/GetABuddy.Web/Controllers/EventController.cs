@@ -1,7 +1,7 @@
 ﻿namespace GetABuddy.Web.Controllers
 {
-    using System.Web.Mvc;
     using System.Collections.Generic;
+    using System.Web.Mvc;
 
     using Data.Models;
     using Microsoft.AspNet.Identity;
