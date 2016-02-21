@@ -2,6 +2,7 @@
 {
     using System.Web.Mvc;
 
+    using Data.Models;
     using Microsoft.AspNet.Identity;
     using Services.Data;
     using ViewModels.EventDetails;
@@ -10,11 +11,13 @@
     {
         private readonly IEventsService events;
         private readonly ICommentsService comments;
+        private readonly IUserServices users;
 
-        public EventController(IEventsService events, ICommentsService comments)
+        public EventController(IEventsService events, ICommentsService comments, IUserServices users)
         {
             this.events = events;
             this.comments = comments;
+            this.users = users;
         }
 
         public ActionResult ById(string id)
@@ -45,6 +48,17 @@
             var viewModel = this.Mapper.Map<EventDetailsViewModel>(eventById);
 
             return this.PartialView("_Comments", viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Join(string id)
+        {
+            string currentUserId = this.User.Identity.GetUserId();
+            ApplicationUser currentUser = this.users.GetById(currentUserId);
+            this.events.AddParticipant(id, currentUser);
+
+            this.TempData["Notification"] = "Thank you for your feedback!";
+            return this.RedirectToAction("/ById/" + id);
         }
     }
 }

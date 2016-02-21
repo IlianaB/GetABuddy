@@ -7,7 +7,25 @@
 <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 
 <hr />
-<a href="#" class="pull-right btn btn-success btn-lg">Join now!</a>
+
+@if (TempData["Notification"] != null)
+{
+	<script type="text/javascript">
+        $(document).ready(function () {
+        	alert("Thank you for joining this event!");
+        })
+	</script>                      
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+	using (Html.BeginForm("Join", "Event", FormMethod.Post, new { enctype = "multipart/form-data" }))
+	{
+		@Html.HiddenFor(m => m.Id);
+		<input type="submit" class="btn btn-success btn-lg" value="Join now!" />
+	}
+}
+
 <div class="panel">
 	<div class="panel-heading">
 		<h1>@Model.Name by <span class="text-primary">@Model.Creator</span></h1>
@@ -35,12 +53,12 @@
 		<h3>Say something</h3>
 
 		@using (Ajax.BeginForm("AddComment",
-				new AjaxOptions
-				{
-					HttpMethod = "POST",
-					UpdateTargetId = "comments-container",
-					InsertionMode = InsertionMode.Replace
-				}))
+								new AjaxOptions
+								{
+									HttpMethod = "POST",
+									UpdateTargetId = "comments-container",
+									InsertionMode = InsertionMode.Replace
+								}))
 		{
 			<div class="row">
 				@Html.HiddenFor(m => m.Id)
