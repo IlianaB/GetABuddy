@@ -222,7 +222,9 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\Category\CategoryDetailsViewModel.cs" />
     <Compile Include="ViewModels\Category\CategoryViewModel.cs" />
+    <Compile Include="ViewModels\Category\EventDetailsViewModel.cs" />
     <Compile Include="ViewModels\EventDetails\CommentViewModel.cs" />
     <Compile Include="ViewModels\EventDetails\EventDetailsViewModel.cs" />
     <Compile Include="ViewModels\Home\CategoryViewModel.cs" />
@@ -321,6 +323,8 @@
     <Content Include="Views\Event\_Comment.cshtml" />
     <Content Include="Views\Event\_Comments.cshtml" />
     <Content Include="Views\Category\All.cshtml" />
+    <Content Include="Views\Category\ById.cshtml" />
+    <Content Include="Views\Category\_EventDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

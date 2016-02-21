@@ -22,5 +22,13 @@
 
             return this.View(viewModel);
         }
+
+        public ActionResult ById(string id)
+        {
+            var category = this.categories.GetById(id);
+            var viewModel = this.Mapper.Map<CategoryDetailsViewModel>(category);
+
+            return this.View(viewModel);
+        }
     }
 }

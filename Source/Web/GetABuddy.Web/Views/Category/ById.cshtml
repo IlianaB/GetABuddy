@@ -1,0 +1,20 @@
+﻿@model GetABuddy.Web.ViewModels.Category.CategoryDetailsViewModel
+@{
+    ViewBag.Title = "ById";
+}
+
+<br />
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<div class="panel-title">All Events</div>
+	</div>
+	<div class="panel-body">
+		<div class="list-group">
+			@foreach (var ev in Model.Events)
+			{
+				@Html.Partial("_EventDetails", ev);
+			}
+		</div>
+	</div>
+</div>
+
