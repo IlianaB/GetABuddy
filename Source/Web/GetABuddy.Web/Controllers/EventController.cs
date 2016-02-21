@@ -60,5 +60,11 @@
             this.TempData["Notification"] = "Thank you for your feedback!";
             return this.RedirectToAction("/ById/" + id);
         }
+
+        [HttpGet]
+        public ActionResult Create(string id)
+        {
+            return this.View();
+        }
     }
 }
