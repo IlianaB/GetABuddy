@@ -9,5 +9,7 @@
         IQueryable<ApplicationUser> GetAll();
 
         ApplicationUser GetById(string id);
+
+        ApplicationUser GetByUserName(string id);
     }
 }

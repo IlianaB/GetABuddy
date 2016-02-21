@@ -12,7 +12,7 @@
 
 		@if (User.Identity.IsAuthenticated)
 		{
-			<small>published by <a href="/Users/Profile/@Model.Author">@Model.Author</a> on @Html.DisplayFor(m => @Model.CreatedOn, "Date")</small>
+			<small>published by <a href="/Users/Profile/ByUserName?name=@Model.Author">@Model.Author</a> on @Html.DisplayFor(m => @Model.CreatedOn, "Date")</small>
 		}
 		else
 		{

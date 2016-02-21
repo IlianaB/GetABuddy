@@ -23,6 +23,10 @@
             this.comments = new HashSet<Comment>();
         }
 
+        public string DisplayName { get; set; }
+
+        public DateTime DateOfBirth { get; set; }
+
         [MaxLength(100)]
         public string FacebookUrl { get; set; }
 

@@ -21,9 +21,16 @@
 
         public ApplicationUser GetById(string id)
         {
-            var eventById = this.users.GetById(id);
+            var user = this.users.GetById(id);
 
-            return eventById;
+            return user;
+        }
+
+        public ApplicationUser GetByUserName(string username)
+        {
+            var user = this.users.All().Where(u => u.UserName == username).FirstOrDefault();
+
+            return user;
         }
     }
 }
