@@ -1,12 +1,16 @@
-﻿namespace MvcTemplate.Web.ViewModels.EventDetails
+﻿namespace GetABuddy.Web.ViewModels.EventDetails
 {
+    using System;
+
     using AutoMapper;
-    using GetABuddy.Data.Models;
-    using GetABuddy.Web.Infrastructure.Mapping;
+    using Data.Models;
+    using Infrastructure.Mapping;
 
     public class CommentViewModel : IMapFrom<Comment>, IHaveCustomMappings
     {
         public string Content { get; set; }
+
+        public DateTime CreatedOn { get; set; }
 
         public string Author { get; set; }
 

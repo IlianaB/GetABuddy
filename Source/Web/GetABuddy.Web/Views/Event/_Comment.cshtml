@@ -1,0 +1,15 @@
+﻿@model GetABuddy.Web.ViewModels.EventDetails.CommentViewModel
+@{
+    ViewBag.Title = "_Comment";
+}
+
+<div class="row comment">
+	<div class="col-md-2">
+		<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+	</div>
+	<div class="col-md-10">
+		<p>@Model.Content</p>
+		<small>published by @Model.Author on @Html.DisplayFor(m => @Model.CreatedOn, "Date")</small>
+	</div>
+</div>
+
