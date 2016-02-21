@@ -16,6 +16,8 @@
 
         public string Creator { get; set; }
 
+        public int CategoryId { get; set; }
+
         public string Category { get; set; }
 
         public string City { get; set; }
