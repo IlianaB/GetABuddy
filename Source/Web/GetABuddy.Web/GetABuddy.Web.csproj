@@ -227,6 +227,7 @@
     <Compile Include="ViewModels\Category\EventDetailsViewModel.cs" />
     <Compile Include="ViewModels\EventDetails\CommentViewModel.cs" />
     <Compile Include="ViewModels\EventDetails\EventDetailsViewModel.cs" />
+    <Compile Include="ViewModels\Event\InputEventViewModel.cs" />
     <Compile Include="ViewModels\Home\CategoryViewModel.cs" />
     <Compile Include="ViewModels\Home\EventViewModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
@@ -326,6 +327,7 @@
     <Content Include="Views\Category\ById.cshtml" />
     <Content Include="Views\Category\_EventDetails.cshtml" />
     <Content Include="Views\Event\Create.cshtml" />
+    <Content Include="Views\Event\_CategoryDropDown.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
