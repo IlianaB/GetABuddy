@@ -21,6 +21,11 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = string.Empty }, null)</li>
 					<li>@Html.ActionLink("Categories", "All", "Category", new { area = string.Empty }, null)</li>
+
+					@if (User.Identity.IsAuthenticated)
+					{
+						<li>@Html.ActionLink("Create Event", "Create", "Event", new { area = string.Empty }, null)</li>
+					}
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
