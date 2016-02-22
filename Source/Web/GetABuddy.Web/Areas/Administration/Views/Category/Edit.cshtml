@@ -1,0 +1,30 @@
+﻿@using GetABuddy.Web.Areas.Administration.ViewModels;
+
+@model GetABuddy.Web.Areas.Administration.ViewModels.EditCategoryViewModel
+@{
+    ViewBag.Title = "EditCategory";
+}
+
+<h2>Edit categories</h2>
+
+<table class="table table-striped table-hover categories-container">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Update</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody id="categories-container">
+		@foreach (var category in Model.Categories)
+		{
+			@Html.Partial("_Category", category)
+		}
+	</tbody>
+</table>
+
+@Html.Partial("_CreateCategory", new InputCategoryViewModel())
+
+
+

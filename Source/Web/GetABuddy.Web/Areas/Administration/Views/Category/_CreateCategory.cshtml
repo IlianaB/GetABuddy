@@ -1,0 +1,28 @@
+﻿@model GetABuddy.Web.Areas.Administration.ViewModels.InputCategoryViewModel
+@{
+    ViewBag.Title = "_CreateCategory";
+}
+
+<script src="~/Scripts/jquery-2.2.0.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+@using (Html.BeginForm("Create", "Category", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
+{
+	@Html.AntiForgeryToken()
+	<h3>Create Category</h3>
+	@Html.ValidationSummary(true)
+
+	<div class="row form-group">
+		<div class="col-md-12">
+			@Html.LabelFor(m => m.Name)
+			@Html.TextBoxFor(m => m.Name)
+		</div>
+	</div>
+	<br />
+
+	<div class="row form-group">
+		<div class="col-md-10">
+			<input type="submit" class="btn btn-success pull-left" value="Create" />
+		</div>
+	</div>
+}

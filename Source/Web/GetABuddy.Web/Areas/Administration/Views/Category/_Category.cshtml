@@ -1,0 +1,33 @@
+﻿@model GetABuddy.Web.Areas.Administration.ViewModels.CategoryViewModel
+	@{
+		ViewBag.Title = "_Category";
+	}
+
+	<tr>
+		<td>@Model.Id</td>
+		<td id="@Model.Id">@Html.EditorFor(m => m.Name)</td>
+		<td>
+			<span class="glyphicon glyphicon-pencil">
+				@Ajax.ActionLink(" Edit", "Edit",
+				   new AjaxOptions
+				   {
+					   Url = "Edit?id=" + @Model.Id + "&name=" + @Model.Name,
+					   HttpMethod = "POST",
+					   UpdateTargetId = Model.Id.ToString(),
+					   InsertionMode = InsertionMode.Replace
+				   })
+			</span>
+		</td>
+		<td>
+		<span class="glyphicon glyphicon-remove">
+			@Ajax.ActionLink(" Delete", "Delete", new AjaxOptions
+			   {
+				   Url = "Delete?id=" + @Model.Id,
+				   HttpMethod = "POST",
+				   UpdateTargetId = Model.Id.ToString(),
+				   InsertionMode = InsertionMode.ReplaceWith
+			   })
+		</span>
+		</td>
+	</tr>
+
