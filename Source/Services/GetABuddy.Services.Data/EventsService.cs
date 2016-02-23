@@ -53,6 +53,11 @@
             return this.events.All().Where(x => x.CreatorId == id).OrderByDescending(x => x.CreatedOn);
         }
 
+        public IQueryable<Event> FindAllByName(string word)
+        {
+            return this.events.All().Where(x => x.Name.ToLower().Contains(word.ToLower())).OrderByDescending(x => x.CreatedOn);
+        }
+
         public void AddComment(Event eventToModify, Comment comment)
         {
             eventToModify.Comments.Add(comment);

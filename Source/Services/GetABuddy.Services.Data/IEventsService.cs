@@ -13,6 +13,8 @@
 
         IQueryable<Event> GetByAuthorId(string id);
 
+        IQueryable<Event> FindAllByName(string word);
+
         Event GetById(string id);
 
         void AddComment(Event eventToModify, Comment comment);
