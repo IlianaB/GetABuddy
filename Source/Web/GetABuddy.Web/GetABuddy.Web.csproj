@@ -236,6 +236,7 @@
     <Compile Include="ViewModels\Event\CreateEventViewModel.cs" />
     <Compile Include="ViewModels\Event\InputEventViewModel.cs" />
     <Compile Include="ViewModels\Event\MyEventsViewModel.cs" />
+    <Compile Include="ViewModels\Event\SingleEventViewModel.cs" />
     <Compile Include="ViewModels\Home\CategoryViewModel.cs" />
     <Compile Include="ViewModels\Home\EventViewModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
@@ -346,6 +347,8 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Event\_MyEvent.cshtml" />
+    <Content Include="Views\Event\All.cshtml" />
+    <Content Include="Views\Event\_SingleEvent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

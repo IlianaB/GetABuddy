@@ -20,6 +20,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = string.Empty }, null)</li>
+					<li>@Html.ActionLink("All Events", "All", "Event", new { area = string.Empty }, null)</li>
 					<li>@Html.ActionLink("Categories", "All", "Category", new { area = string.Empty }, null)</li>
 
 					@if (User.Identity.IsAuthenticated)

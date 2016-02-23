@@ -39,6 +39,15 @@
             return this.View(viewModel);
         }
 
+        [HttpGet]
+        public ActionResult All(string id)
+        {
+            var allEvents = this.events.GetAll();
+            var viewModel = this.Mapper.Map<ICollection<SingleEventViewModel>>(allEvents);
+
+            return this.View(viewModel);
+        }
+
         [HttpPost]
         public PartialViewResult AddComment(string content, string id)
         {

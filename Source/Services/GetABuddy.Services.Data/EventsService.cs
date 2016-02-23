@@ -31,7 +31,7 @@
 
         public IQueryable<Event> GetAll()
         {
-            return this.events.All();
+            return this.events.All().OrderByDescending(m => m.Time);
         }
 
         public Event GetById(string id)

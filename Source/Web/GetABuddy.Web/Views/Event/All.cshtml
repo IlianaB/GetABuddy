@@ -1,0 +1,12 @@
+﻿@model ICollection<GetABuddy.Web.ViewModels.Event.SingleEventViewModel>
+@{
+    ViewBag.Title = "All";
+}
+
+<h3>All Events</h3>
+
+@foreach (var ev in Model)
+{
+	@Html.Partial("_SingleEvent", ev)
+}
+
