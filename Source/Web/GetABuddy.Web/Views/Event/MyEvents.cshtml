@@ -1,0 +1,27 @@
+﻿@model ICollection<GetABuddy.Web.ViewModels.Event.MyEventsViewModel>
+@{
+	ViewBag.Title = "MyEvents";
+}
+
+<h2>My Events</h2>
+
+<table class="table table-striped table-hover categories-container">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Time</th>
+			<th>Participants</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody id="categories-container">
+
+		@foreach (var ev in Model)
+		{
+			@Html.Partial("_MyEvent", ev)
+		}
+	</tbody>
+</table>
+

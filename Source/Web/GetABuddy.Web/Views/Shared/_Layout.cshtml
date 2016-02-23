@@ -25,6 +25,7 @@
 					@if (User.Identity.IsAuthenticated)
 					{
 						<li>@Html.ActionLink("Create Event", "Create", "Event", new { area = string.Empty }, null)</li>
+						<li>@Html.ActionLink("My Events", "MyEvents", "Event", new { area = string.Empty }, null)</li>
 					}
 
 					@if (User.IsInRole("Administrator"))

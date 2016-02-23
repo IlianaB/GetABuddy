@@ -11,6 +11,8 @@
 
         IQueryable<Event> GetNewest(int count);
 
+        IQueryable<Event> GetByAuthorId(string id);
+
         Event GetById(string id);
 
         void AddComment(Event eventToModify, Comment comment);
@@ -18,5 +20,9 @@
         void AddParticipant(string id, ApplicationUser user);
 
         Event Create(string name, string description, DateTime time, int numberOfParticipants, int cityId, int categoryId, string authorId);
+
+        Event Update(string id, string name, string description, DateTime time, int numberOfParticipants);
+
+        void Delete(string id);
     }
 }
