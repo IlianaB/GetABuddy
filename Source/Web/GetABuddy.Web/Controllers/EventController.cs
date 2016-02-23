@@ -118,7 +118,25 @@
             var events = this.events.GetAll();
             var viewModel = this.Mapper.Map<IEnumerable<MyEventsViewModel>>(events);
 
-            return this.View(events);
+            return this.View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(MyEventsViewModel input)
+        {
+            var ev = this.events.Update(input.Id.ToString(), input.Name, input.Description, input.Time, input.NumberOfParticipants);
+
+            return this.RedirectToAction("/MyEvents");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(MyEventsViewModel input)
+        {
+            this.events.Delete(input.Id.ToString());
+
+            return this.RedirectToAction("/MyEvents");
         }
     }
 }

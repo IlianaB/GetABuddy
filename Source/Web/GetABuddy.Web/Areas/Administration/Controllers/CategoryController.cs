@@ -27,6 +27,7 @@
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(InputCategoryViewModel input)
         {
             var category = this.categories.Update(input.Id.ToString(), input.Name);
@@ -35,6 +36,7 @@
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Delete(InputCategoryViewModel input)
         {
             this.categories.Delete(input.Id.ToString());

@@ -48,6 +48,11 @@
             return this.events.All().OrderByDescending(x => x.CreatedOn).Take(count);
         }
 
+        public IQueryable<Event> GetByAuthorId(string id)
+        {
+            return this.events.All().Where(x => x.CreatorId == id).OrderByDescending(x => x.CreatedOn);
+        }
+
         public void AddComment(Event eventToModify, Comment comment)
         {
             eventToModify.Comments.Add(comment);
@@ -88,6 +93,27 @@
             this.events.Save();
 
             return newEvent;
+        }
+
+        public Event Update(string id, string name, string description, DateTime time, int numberOfParticipants)
+        {
+            var ev = this.GetById(id);
+            ev.Name = name;
+            ev.Description = description;
+            ev.Time = time;
+            ev.NumberOfParticipants = numberOfParticipants;
+
+            this.events.Save();
+
+            return ev;
+        }
+
+        public void Delete(string id)
+        {
+            var ev = this.GetById(id);
+            this.events.Delete(ev);
+
+            this.events.Save();
         }
     }
 }

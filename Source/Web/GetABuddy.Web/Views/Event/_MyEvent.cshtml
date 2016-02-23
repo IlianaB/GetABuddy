@@ -9,7 +9,7 @@
 		@Html.AntiForgeryToken()
 		@Html.ValidationSummary(true)
 
-		<td>@Html.HiddenFor(m => m.Id)</td>
+		@Html.HiddenFor(m => m.Id)
 		<td>
 			@Html.TextBoxFor(m => m.Name)
 		</td>
@@ -26,7 +26,7 @@
 			<input type="submit" class="btn btn-success pull-left" value="Edit" />
 		</td>
 	}
-	@using (Html.BeginForm("Delete", "Category", FormMethod.Post, new { enctype = "multipart/form-data" }))
+	@using (Html.BeginForm("Delete", "Event", FormMethod.Post, new { enctype = "multipart/form-data" }))
 	{
 		@Html.AntiForgeryToken()
 		@Html.ValidationSummary(true)
