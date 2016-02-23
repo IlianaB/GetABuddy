@@ -2,8 +2,13 @@
 {
     using System;
 
-    public class MyEventsViewModel
+    using Data.Models;
+    using Infrastructure.Mapping;
+
+    public class MyEventsViewModel : IMapFrom<Event>
     {
+        public int Id { get; set; }
+
         public string Name { get; set; }
 
         public string Description { get; set; }

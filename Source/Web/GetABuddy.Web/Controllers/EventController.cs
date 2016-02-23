@@ -116,6 +116,7 @@
         {
             var authorId = this.User.Identity.GetUserId();
             var events = this.events.GetAll();
+            var viewModel = this.Mapper.Map<IEnumerable<MyEventsViewModel>>(events);
 
             return this.View(events);
         }

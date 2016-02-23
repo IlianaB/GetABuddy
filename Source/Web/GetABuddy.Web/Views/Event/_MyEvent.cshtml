@@ -1,0 +1,40 @@
+﻿@model GetABuddy.Web.ViewModels.Event.MyEventsViewModel
+@{
+    ViewBag.Title = "_MyEvent";
+}
+
+<tr>
+	@using (Html.BeginForm("Edit", "Event", FormMethod.Post, new { enctype = "multipart/form-data" }))
+	{
+		@Html.AntiForgeryToken()
+		@Html.ValidationSummary(true)
+
+		<td>@Html.HiddenFor(m => m.Id)</td>
+		<td>
+			@Html.TextBoxFor(m => m.Name)
+		</td>
+		<td>
+			@Html.TextBoxFor(m => m.Description)
+		</td>
+		<td>
+			@Html.TextBoxFor(m => m.Time)
+		</td>
+		<td>
+			@Html.TextBoxFor(m => m.NumberOfParticipants)
+		</td>
+		<td>
+			<input type="submit" class="btn btn-success pull-left" value="Edit" />
+		</td>
+	}
+	@using (Html.BeginForm("Delete", "Category", FormMethod.Post, new { enctype = "multipart/form-data" }))
+	{
+		@Html.AntiForgeryToken()
+		@Html.ValidationSummary(true)
+
+		<td>
+			@Html.HiddenFor(m => m.Id)
+			<input type="submit" class="btn btn-danger pull-left" value="Delete" />
+		</td>
+	}
+</tr>
+

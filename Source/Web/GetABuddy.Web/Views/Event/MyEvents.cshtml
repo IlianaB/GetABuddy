@@ -1,6 +1,6 @@
 ﻿@model ICollection<GetABuddy.Web.ViewModels.Event.MyEventsViewModel>
 @{
-    ViewBag.Title = "MyEvents";
+	ViewBag.Title = "MyEvents";
 }
 
 <h2>My Events</h2>
@@ -17,4 +17,11 @@
 		</tr>
 	</thead>
 	<tbody id="categories-container">
+
+		@foreach (var ev in Model)
+		{
+			@Html.Partial("_MyEvent", ev)
+		}
+	</tbody>
+</table>
 
