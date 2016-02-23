@@ -8,7 +8,7 @@
 		<h3>@Model.Name</h3>
 	</a>
 	<h4>Where: @Model.City</h4>
-	<h4>When: @Html.DisplayFor(m => m.Time, "Date")</h4>
+	<h4>@Html.DisplayFor(m => m.Time, "InTime")</h4>
 	<div>Created by @Model.Creator in <a href="/Category/ById/@Model.CategoryId">@Html.DisplayFor(m => m.Category, "Tag")</a></div>
 	<br />
 	<p><a class="btn btn-success" href="@Model.Url" role="button">Learn More</a></p>

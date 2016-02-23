@@ -361,6 +361,9 @@
     <Content Include="Views\Event\_SingleEvent.cshtml" />
     <Content Include="Views\About\Info.cshtml" />
     <Content Include="Views\Contact\Info.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\InTime.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Title.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

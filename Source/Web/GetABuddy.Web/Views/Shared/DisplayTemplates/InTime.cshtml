@@ -1,0 +1,20 @@
+﻿@model DateTime
+
+@{
+	string result;
+	DateTime now = DateTime.Now;
+	TimeSpan ts = now - Model;
+	int days = Math.Abs(ts.Days);
+
+	if (days < 0)
+	{
+		result = "This event has ended.";
+	}
+	else
+	{
+		result = "Starts in " + days + " days";
+	}
+}
+
+<span>@result</span>
+
