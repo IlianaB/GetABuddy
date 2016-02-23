@@ -1,0 +1,64 @@
+﻿@using Jmelosegui.Mvc.GoogleMap
+@{
+    ViewBag.Title = "Contact Us";
+}
+
+<div class="page-header">
+	<h3>Contacts</h3>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Contact Information</h3>
+			</div>
+			<div class="panel-body row">
+				<div class="col-md-3">
+					Email: 
+				</div>
+				<div class="col-md-9">
+					<a href="mailto:iliana.bobeva@gmail.com">
+						<i class="glyphicon glyphicon-envelope"></i>
+						iliana.bobeva@gmail.com
+					</a>
+				</div>
+				<br /><br />
+				<div class="col-md-3">
+					Phone:
+				</div>
+				<div class="col-md-9">
+					<a href="#">
+						<i class="glyphicon glyphicon-phone"></i>
+						0888-888-888
+					</a>
+				</div>
+				<br /><br />
+				<div class="col-md-3">
+					Address:
+				</div>
+				<div class="col-md-9">
+					<a href="#">
+						<i class="glyphicon glyphicon-home"></i>
+						Bulgaria, Sofia
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		@(
+			Html.GoogleMap()
+			.Name("map")
+			.Height(500)
+			.Zoom(18)
+			.Center(c => c.Latitude(42.650847)
+						  .Longitude(23.379431))
+			.Markers(m => m.Add().Title("Telerik Academy!"))
+		)
+	</div>
+</div>
+@section scripts
+{
+	@(Html.GoogleMap().ScriptRegistrar())
+}
