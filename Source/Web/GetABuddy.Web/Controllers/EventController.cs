@@ -8,7 +8,7 @@
     using Services.Data;
     using ViewModels.Event;
     using ViewModels.EventDetails;
-
+    using System.Web.ModelBinding;
     public class EventController : BaseController
     {
         private readonly IEventsService events;
@@ -146,6 +146,20 @@
             this.events.Delete(input.Id.ToString());
 
             return this.RedirectToAction("/MyEvents");
+        }
+
+        [HttpGet]
+        public ActionResult Search([QueryString]string word)
+        {
+            if (word == null)
+            {
+                word = string.Empty;
+            }
+
+            var eventsByWord = this.events.FindAllByName(word);
+            var viewModel = this.Mapper.Map<ICollection<SingleEventViewModel>>(eventsByWord);
+
+            return this.View("All", viewModel);
         }
     }
 }

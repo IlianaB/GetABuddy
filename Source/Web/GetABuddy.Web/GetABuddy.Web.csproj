@@ -242,6 +242,7 @@
     <Compile Include="ViewModels\Event\CreateEventViewModel.cs" />
     <Compile Include="ViewModels\Event\InputEventViewModel.cs" />
     <Compile Include="ViewModels\Event\MyEventsViewModel.cs" />
+    <Compile Include="ViewModels\Event\SearchViewModel.cs" />
     <Compile Include="ViewModels\Event\SingleEventViewModel.cs" />
     <Compile Include="ViewModels\Home\CategoryViewModel.cs" />
     <Compile Include="ViewModels\Home\EventViewModel.cs" />

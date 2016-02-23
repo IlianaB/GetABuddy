@@ -4,9 +4,26 @@
 }
 
 <h3>All Events</h3>
+<br />
 
-@foreach (var ev in Model)
-{
-	@Html.Partial("_SingleEvent", ev)
-}
+<form class="form row" method="GET" action="Search">
+	<div class="col-lg-6">
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="Search for..." name="word" id="search">
+			<span class="input-group-btn">
+				<button class="btn btn-info" type="submit">
+					<i class="glyphicon glyphicon-search"></i>
+				</button>
+			</span>
+		</div>
+	</div>
+</form>
+<br />
+
+<div class="row">
+	@foreach (var ev in Model)
+	{
+		@Html.Partial("_SingleEvent", ev)
+	}
+</div>
 
