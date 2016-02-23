@@ -27,20 +27,19 @@
         }
 
         [HttpPost]
-        public ActionResult Edit(string id, string name)
+        public ActionResult Edit(InputCategoryViewModel input)
         {
-            var category = this.categories.Update(id, name);
-            var categories = this.Mapper.Map<CategoryViewModel>(category);
+            var category = this.categories.Update(input.Id.ToString(), input.Name);
 
-            return this.PartialView("_Category", category);
+            return this.RedirectToAction("/Edit");
         }
 
         [HttpPost]
-        public JsonResult Delete(string id)
+        public ActionResult Delete(InputCategoryViewModel input)
         {
-            this.categories.Delete(id);
+            this.categories.Delete(input.Id.ToString());
 
-            return new JsonResult();
+            return this.RedirectToAction("/Edit");
         }
 
         [HttpPost]
