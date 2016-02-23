@@ -109,5 +109,15 @@
 
             return this.RedirectToAction("/ById/" + newEvent.Id);
         }
+
+        [HttpGet]
+        [Authorize]
+        public ActionResult MyEvents()
+        {
+            var authorId = this.User.Identity.GetUserId();
+            var events = this.events.GetAll();
+
+            return this.View(events);
+        }
     }
 }
