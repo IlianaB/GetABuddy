@@ -26,6 +26,11 @@
 					{
 						<li>@Html.ActionLink("Create Event", "Create", "Event", new { area = string.Empty }, null)</li>
 					}
+
+					@if (User.IsInRole("Administrator"))
+					{
+						<li>@Html.ActionLink("Edit categories", "Edit", "Category", new { area = "Administration" }, null)</li>
+					}
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

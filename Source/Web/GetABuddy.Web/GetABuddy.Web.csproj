@@ -198,7 +198,11 @@
     <Compile Include="App_Start\SmsService.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
+    <Compile Include="Areas\Administration\ViewModels\CategoryViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\EditCategoryViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\InputCategoryViewModel.cs" />
     <Compile Include="Areas\Users\UsersAreaRegistration.cs" />
     <Compile Include="Areas\Users\Controllers\ProfileController.cs" />
     <Compile Include="Areas\Users\ViewModels\EventViewModel.cs" />
@@ -270,6 +274,9 @@
     <Content Include="Areas\Users\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Users\Views\Profile\ByUserName.cshtml" />
     <Content Include="Areas\Users\Views\Profile\_Event.cshtml" />
+    <Content Include="Areas\Administration\Views\Category\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\Category\_Category.cshtml" />
+    <Content Include="Areas\Administration\Views\Category\_CreateCategory.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

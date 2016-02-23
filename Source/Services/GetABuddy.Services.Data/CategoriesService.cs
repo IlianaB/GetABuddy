@@ -33,6 +33,11 @@
             return this.categories.All().OrderBy(x => x.Name);
         }
 
+        public IQueryable<Category> GetNewest()
+        {
+            return this.categories.All().OrderByDescending(x => x.CreatedOn);
+        }
+
         public Category GetById(string id)
         {
             int intId = 1;
@@ -40,6 +45,37 @@
             var category = this.categories.GetById(intId);
 
             return category;
+        }
+
+        public Category Update(string id, string name)
+        {
+            var category = this.GetById(id);
+            category.Name = name;
+
+            this.categories.Save();
+
+            return category;
+        }
+
+        public Category Create(string name)
+        {
+            var newCategory = new Category
+            {
+                Name = name
+            };
+
+            this.categories.Add(newCategory);
+            this.categories.Save();
+
+            return newCategory;
+        }
+
+        public void Delete(string id)
+        {
+            var category = this.GetById(id);
+            this.categories.Delete(category);
+
+            this.categories.Save();
         }
     }
 }
