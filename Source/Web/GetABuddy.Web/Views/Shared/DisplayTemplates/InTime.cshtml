@@ -3,8 +3,8 @@
 @{
 	string result;
 	DateTime now = DateTime.Now;
-	TimeSpan ts = now - Model;
-	int days = Math.Abs(ts.Days);
+	TimeSpan ts = Model - now;
+	int days = ts.Days;
 
 	if (days < 0)
 	{
